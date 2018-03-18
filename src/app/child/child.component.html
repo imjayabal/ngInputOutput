@@ -1,0 +1,11 @@
+<h1>Child Box</h1>
+<ul>
+  <li>Value from Parent: <strong>{{ pValue }}</strong> </li>
+  <li>Child value: <strong>{{ childValue }}</strong> </li>
+  <button class="btn btn-primary" (click)='senToParent()' >Send to Parent</button>
+</ul>
+<hr>
+<span class="glyphicon" 
+      [class.glyphicon-star]='isFavorite'
+      [class.glyphicon-star-empty]='!isFavorite'
+></span>

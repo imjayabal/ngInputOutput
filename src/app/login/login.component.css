@@ -1,0 +1,23 @@
+.sign-in {
+    margin: 50px 0;
+    background: #f1f1f1;
+    padding: 30px;
+    border-radius: 10px;
+}
+.sign-in h1{
+    margin-bottom: 25px;
+}
+.sign-in label{
+    display: none;
+}
+.sign-in .form-control{
+    padding:.75rem;
+}
+.sign-in button{
+    height: 50px;
+    text-transform: uppercase;
+}
+.sign-in .alert-text{
+    font-size: 14px;
+    color: #f00;
+}

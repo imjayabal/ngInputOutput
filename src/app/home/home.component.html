@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1>Home Page</h1>
+      <div class="login">
+        <p>Welcom <strong>[Name]</strong> </p>
+        <ul>
+          <li><a routerLink="/admin">Admin</a></li>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box">
+        <h1>Parent Box</h1>
+        <ul>
+          <li>Parent value: <strong> {{ parentValue }} </strong> </li>
+          <li>Value from child: <strong>{{ testValue }}</strong> </li>
+        </ul>
+      </div>
+    </div>
+    <!-- child component -->
+    <div class="col-md-4">
+      <div class="box">
+        <app-child [pValue]='parentValue' (cValue)='setData($event)'></app-child>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="col-md-6 flex-container-center">
+    <h1 class="text-center">{{title}}</h1>
+    <table class="table">
+        <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Stock</th>
+        </thead>
+        <tbody>
+            <tr *ngFor='let p of products'>
+              <td>{{ p.id }}</td>
+              <td>{{ p.title }}</td>
+              <td>{{ p.price }}</td>
+              <td>{{ p.stock }}</td>
+              <td> <app-stockstatus [productId]='p.id' [stock]='p.stock' (stockValueChange)='changeStockValue($event)'></app-stockstatus> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
